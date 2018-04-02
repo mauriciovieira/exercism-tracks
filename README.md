@@ -2,6 +2,14 @@
 
 These are my [exercism.io](https://exercism.io) tracks
 
+## Running on docker
+
+Load utility functions and bring docker up
+```bash
+source ./exercism-tracks.sh
+exercism_start
+```
+
 ## Author
 
 **Mauricio Vieira (mauriciovieira)**
