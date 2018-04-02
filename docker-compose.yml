@@ -1,0 +1,10 @@
+version: "3"
+services:
+  exercism-python:
+    build: python
+    volumes:
+      - ./python:/python
+  exercism-ruby:
+    build: ruby
+    volumes:
+      - ./ruby:/ruby
