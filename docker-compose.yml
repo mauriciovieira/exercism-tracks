@@ -1,5 +1,9 @@
 version: "3"
 services:
+  exercism-haskell:
+    build: haskell
+    volumes:
+      - ./haskell:/haskell
   exercism-python:
     build: python
     volumes:
