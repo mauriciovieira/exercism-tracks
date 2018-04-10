@@ -1,5 +1,9 @@
 version: "3"
 services:
+  exercism-go:
+    build: go
+    volumes:
+      - ./go:/go
   exercism-python:
     build: python
     volumes:
