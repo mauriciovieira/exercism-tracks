@@ -24,10 +24,10 @@ jobs:
           name: run python tests
           command: |
             docker-compose run --rm exercism-python pytest python/**/*_test.py
-      # - run:
-      #     name: run ruby tests
-      #     command: |
-      #       docker-compose run --rm exercism-ruby find ruby -name "*_test.rb" | xargs -L 1 -I folder bash -c 'cd $(dirname folder) && ruby *_test.rb'
+      - run:
+          name: run ruby tests
+          command: |
+            docker-compose run --rm exercism-ruby ruby/run_tests.sh
 
 workflows:
   version: 2
