@@ -1,3 +1,4 @@
+alias exercism_build="docker-compose build"
 alias exercism_start="docker-compose up -d"
 alias exercism_stop="docker-compose stop"
 alias exercism_go="docker-compose run --rm exercism-go"
