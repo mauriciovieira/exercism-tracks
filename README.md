@@ -14,7 +14,9 @@ exercism_start
 
 ## Author
 
-**Mauricio Vieira (mauriciovieira)**
+| ![Mauricio Vieira](https://avatars2.githubusercontent.com/u/95258?s=150&v=4)|
+|:---------------------:|
+|  [Mauricio Vieira](https://github.com/mauriciovieira/)   |
+
 + <http://mauriciovieira.net>
 + <https://twitter.com/mauriciovieira>
-+ <https://github.com/mauriciovieira>
