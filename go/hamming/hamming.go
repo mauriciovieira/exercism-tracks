@@ -5,17 +5,19 @@ import (
 	"errors"
 )
 
-// Distance calculates the hamming distance between two sequences
-func Distance(a, b string) (d int, err error) {
+// Distance calculcates the hamming distance between two sequences
+func Distance(a, b string) (int, error) {
 	if len(a) != len(b) {
 		return -1, errors.New("strings have different size")
 	}
 
+	distance := 0
+
 	for i := range a {
 		if a[i] != b[i] {
-			d += 1
+			distance += 1
 		}
 	}
 
-	return
+	return distance, nil
 }
