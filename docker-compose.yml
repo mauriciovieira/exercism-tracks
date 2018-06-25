@@ -1,5 +1,9 @@
 version: "3"
 services:
+  exercism-c:
+    build: c
+    volumes:
+      - ./c:/c
   exercism-go:
     build: go
     volumes:

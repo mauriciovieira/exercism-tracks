@@ -17,6 +17,10 @@ jobs:
             docker-compose up -d
             source ./exercism-tracks.sh
       - run:
+          name: run c tests
+          command: |
+            docker-compose run --rm exercism-c c/run-tests.sh
+      - run:
           name: run go tests
           command: |
             docker-compose run --rm exercism-go go test ./... -v

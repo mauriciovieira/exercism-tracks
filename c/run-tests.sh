@@ -1,0 +1,42 @@
+#!/bin/bash -x
+set -e
+
+cd c
+directories=$(find . -maxdepth 1 -type d)
+
+for D in $directories; do
+    CURRENT_DIR=$(pwd)
+
+    if [ -d "${D}/test" ]; then
+        # Get the exercise name from the test file
+        TEST_FILE=$(basename $(ls ${D}/test/test*))
+        STRIPPED_OF_EXTENSION="${TEST_FILE%.*}"
+        EXERCISE_NAME="${STRIPPED_OF_EXTENSION:5}"
+
+        #remove the ignore line
+        sed -i.bak 's/TEST_IGNORE();//' ${D}/test/test_*.c
+
+        # Copy the examples with the correct name for the exercise
+        if [ -e "${D}/src/example.c" ]
+        then
+          cp ${D}/src/example.c ${D}/src/${EXERCISE_NAME}.c
+        fi
+
+        if [ -e "${D}/src/example.h" ]
+        then
+          cp ${D}/src/example.h ${D}/src/${EXERCISE_NAME}.h
+        fi
+
+        # Make it!
+        { cd ${D};
+          echo "Running tests for ${EXERCISE_NAME}";
+          make clean >> /dev/null;
+          if make memcheck | grep FAIL: ; then
+            exit 1
+          elif [ ${PIPESTATUS[0]} -ne 0 ]; then
+            exit 1
+          fi
+          cd ${CURRENT_DIR};
+        }
+    fi
+done
