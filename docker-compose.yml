@@ -4,6 +4,10 @@ services:
     build: go
     volumes:
       - ./go:/go
+  exercism-php:
+    build: php
+    volumes:
+      - ./php:/php
   exercism-python:
     build: python
     volumes:
