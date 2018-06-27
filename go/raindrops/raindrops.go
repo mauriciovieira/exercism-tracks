@@ -2,48 +2,26 @@
 package raindrops
 
 import (
+	"bytes"
 	"strconv"
 )
 
-// waterdropGenerator is used internally to expose various attributes
-type waterdropGenerator struct {
-	drop int
+var dictionary = map[int]string{
+	3: "Pling",
+	5: "Plang",
+	7: "Plong",
 }
 
-// isPling returns true if the drop is divisible by 3
-func (r *waterdropGenerator) isPling() bool {
-	return r.drop%3 == 0
-}
-
-// isPlang returns true if the drop is divisible by 5
-func (r *waterdropGenerator) isPlang() bool {
-	return r.drop%5 == 0
-}
-
-// isPlang returns true if the drop is divisible by 8
-func (r *waterdropGenerator) isPlong() bool {
-	return r.drop%7 == 0
-}
-
-// Convert will take a string and return the snarky response of a teenager named Bob
-func Convert(drop int) string {
-	waterdrop := &waterdropGenerator{drop}
-	remarks := ""
-
-	if waterdrop.isPling() {
-		remarks += "Pling"
+// Convert is function that converts numbers into strings in raindrop language
+func Convert(number int) string {
+	var buffer bytes.Buffer
+	for index, drop := range dictionary {
+		if number%index == 0 {
+			buffer.WriteString(drop)
+		}
 	}
-
-	if waterdrop.isPlang() {
-		remarks += "Plang"
+	if buffer.Len() == 0 {
+		return strconv.Itoa(number)
 	}
-
-	if waterdrop.isPlong() {
-		remarks += "Plong"
-	}
-
-	if remarks == "" {
-		return strconv.Itoa(drop)
-	}
-	return remarks
+	return buffer.String()
 }
