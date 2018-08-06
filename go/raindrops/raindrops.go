@@ -3,6 +3,7 @@ package raindrops
 
 import (
 	"bytes"
+	"sort"
 	"strconv"
 )
 
@@ -15,9 +16,16 @@ var dictionary = map[int]string{
 // Convert is function that converts numbers into strings in raindrop language
 func Convert(number int) string {
 	var buffer bytes.Buffer
-	for index, drop := range dictionary {
+
+	var keys []int
+	for k := range dictionary {
+		keys = append(keys, k)
+	}
+	sort.Ints(keys)
+
+	for _, index := range keys {
 		if number%index == 0 {
-			buffer.WriteString(drop)
+			buffer.WriteString(dictionary[index])
 		}
 	}
 	if buffer.Len() == 0 {
