@@ -32,7 +32,10 @@ jobs:
           name: run ruby tests
           command: |
             docker-compose run --rm exercism-ruby ruby/run_tests.sh
-
+      - run:
+          name: run rust tests
+          command: |
+            docker-compose run --rm exercism-rust rust/run_tests.sh
 workflows:
   version: 2
   exercism-tracks:

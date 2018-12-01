@@ -16,3 +16,7 @@ services:
     build: ruby
     volumes:
       - ./ruby:/ruby
+  exercism-rust:
+    build: rust
+    volumes:
+      - ./rust:/rust
