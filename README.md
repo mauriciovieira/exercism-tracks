@@ -4,6 +4,16 @@
 
 These are my [exercism.io](https://exercism.io) tracks
 
+## Installation
+
+Run
+
+```bash
+brew bundle
+```
+
+To install requirements
+
 ## Running on docker
 
 Load utility functions and bring docker up
