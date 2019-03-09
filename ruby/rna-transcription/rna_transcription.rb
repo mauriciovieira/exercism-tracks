@@ -11,7 +11,3 @@ class Complement
     dna_sequence.chars.map {|l| @@complements[l] }.join ''
   end
 end
-
-module BookKeeping
-  VERSION = 4
-end
