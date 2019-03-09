@@ -11,10 +11,9 @@ rescue LoadError => e
   exit 1
 end
 
-# Common test data version: 1.0.0 4b9ae53
+# Common test data version: 1.1.0 be3ae66
 class HelloWorldTest < Minitest::Test
   def test_say_hi
-    # skip
     assert_equal "Hello, World!", HelloWorld.hello
   end
 end
