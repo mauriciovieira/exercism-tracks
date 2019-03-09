@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 class Hamming
   def self.compute(a, b)
     a_arr = a.split('')
