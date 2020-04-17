@@ -28,5 +28,5 @@ exercism_start
 |:---------------------:|
 |  [Mauricio Vieira](https://github.com/mauriciovieira/)   |
 
-+ <http://mauriciovieira.net>
++ <https://mauriciovieira.net>
 + <https://twitter.com/mauriciovieira>
